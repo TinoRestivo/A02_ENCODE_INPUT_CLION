@@ -27,6 +27,10 @@ int asmFile(FILE* inputFile, FILE* outputFile)
 				{
 					fprintf(outputFile, "dc.b\t");
 				}
+				else
+				{
+					fprintf(outputFile, ", ");
+				}
 				fprintf(outputFile, "$%02X", outChar);
 				numOfCharWritten++;
 			}

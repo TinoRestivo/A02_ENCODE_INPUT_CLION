@@ -32,7 +32,7 @@ int outputFileRead(char* inputFileName, char* outputFileName, FILE** outputFile,
 
 		//Open output file
 		*outputFile = fopen(outputFileLocation, "w+");
-		if (outputFile == NULL)
+		if (*outputFile == NULL)
 		{
 			printf("ERROR: Can't open '%s' file\n", outputFileName);
 			return ERROR;

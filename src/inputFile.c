@@ -15,8 +15,8 @@ int inputFileRead(char* fileName, FILE** inputFile)
 		strcpy(inputFileLocation, ".\\");
 		strcat(inputFileLocation, fileName);
 
-		*inputFile = fopen(inputFileLocation, "r");
-		if (inputFile == NULL)
+		*inputFile = fopen(inputFileLocation, "rb");
+		if (*inputFile == NULL)
 		{
 			printf("ERROR: Can't open '%s' file\n", fileName);
 			return ERROR;
