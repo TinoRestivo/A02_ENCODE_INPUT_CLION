@@ -7,4 +7,4 @@
 // Prototypes
 int inputFileRead(char* fileName, FILE** inputFile);
 
-int asm(FILE* inputFile, FILE* outputFile);
+int asmFile(FILE* inputFile, FILE* outputFile);

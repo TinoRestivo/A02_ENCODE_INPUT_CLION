@@ -16,7 +16,7 @@
 
 #include "../inc/inputFile.h"
 #include "../inc/outputFile.h"
-#include "../inc/asm.h"
+#include "../inc/asmFile.h"
 #include "../inc/parseCommandLine.h"
 #include "../inc/srec.h"
 
@@ -58,7 +58,7 @@ int main(int argc, char* argv[])			// quick and dirty program
 
 	if (outputFormat != S_RECORD)
 	{
-		int success = asm(inputFile, outputFile);
+		int success = asmFile(inputFile, outputFile);
 		if (success == ERROR)
 		{
 			//Closing the files in case of failed read/write tasks.
