@@ -1,10 +1,20 @@
-#define STARTING_LOCATION 0
+/*
+* FILE:				srec.h
+* PROJECT:			SENG2030 - encodeInput Assignment #2
+* PROGRAMMER:		Tino Restivo, Olha Mezin
+* FIRST VERSION:	Jan 25, 2025
+* DESCRIPTION:
+*
+* This is the header file for srec.c
+*/
+#ifndef SREC_H
+#define SREC_H
+#include <stdio.h>
 #define S0 "S0"
 #define S1 "S1"
 #define S5 "S5"
 #define S9 "S9"
 #define MASK_HIGH_BYTE 0x00FF
-#define SECOND_BYTE_MULTIPLIER 16
 
 #define T_FIELD 2						//portion for s command (s0,s1,s5,s9) size is 2
 #define C_FIELD 2						//portion holding byte size is 2
@@ -55,3 +65,4 @@ Hex2Bytes createCheckSum(unsigned char count, unsigned short int address, unsign
 unsigned short int getDataSum(unsigned char* data, int dataSize);
 Hex2Bytes charHex2(unsigned char c);
 Hex4Bytes intHex4(unsigned short int i);
+#endif //SREC_H

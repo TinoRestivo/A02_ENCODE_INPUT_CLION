@@ -1,8 +1,30 @@
+/*
+* FILE:			asmFile.c
+* PROJECT:		SENG2030 - encodeInput Assignment #2
+* PROGRAMMER:		Tino Restivo, Olha Mezin
+* FIRST VERSION:	Jan 23, 2025
+* DESCRIPTION:
+*
+* This file includes logic for creating the asm file
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "../inc/asmFile.h"
+
+/*
+	Function: int asmFile(FILE* inputFile, FILE* outputFile)
+
+	Parameters:		FILE* inputFile:		The input file pointer
+					FILE* outputFile:	    The output file pointer
+
+	Return Value: int (result Success or Error)
+
+	Description: This function creates the asm file using the input and output file.
+
+*/
 
 int asmFile(FILE* inputFile, FILE* outputFile)
 {

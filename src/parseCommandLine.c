@@ -1,9 +1,33 @@
+/*
+* FILE:				parseCommandLine.c
+* PROJECT:			SENG2030 - encodeInput Assignment #2
+* PROGRAMMER:		Tino Restivo, Olha Mezin
+* FIRST VERSION:	Jan 23, 2025
+* DESCRIPTION:
+*
+* This file includes logic for parsing the command line
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "../inc/parseCommandLine.h"
+/*
+	Function: int parseSwitches(int argc, char* argv[], char* inputFileName, char* outputFileName, int* outputFormat)
 
+	Parameters:		int argc:				number of command line arguments
+					char* argv[]:			The command line arguments
+					char* inputFileName:	The input file name
+					char* outputFileName:	The output file name
+					int* format:			Indicates if S_REC or asm file is selected from command line
+	Return Value: int (result Success or Error)
+
+	Description: This function gets the command line options, user can select a input and a output file and
+	if asm file is selected or srec file is selected, if input file not selected stdin is used.If no input file and
+	no output file specified stdout will be used
+
+*/
 int parseSwitches(int argc, char* argv[], char* inputFileName, char* outputFileName, int* outputFormat)
 {
 	// Checking for arguments count
@@ -73,13 +97,21 @@ int parseSwitches(int argc, char* argv[], char* inputFileName, char* outputFileN
 
 	return 0;
 }
+/*
+	Function: void printHelp(void)
 
+	Parameters:		void
+	Return Value:	void
+
+	Description: This function shows the command line options.
+
+*/
 void printHelp(void)
 {
 	printf("Usage: my_program [options]\n");
 	printf("Options:\n");
-	printf("  -i<INPUTFILENAME>		Specifies input file.\n");
-	printf("  -o<OUTPUTFILENAME>	Specifies output file.\n");
-	printf("  -srec					Specifies output format as S-Record format.\n");
-	printf("  -h					Shows this help message.\n");
+	printf("  -i<INPUTFILENAME>\tSpecifies input file.\n");
+	printf("  -o<OUTPUTFILENAME>\tSpecifies output file.\n");
+	printf("  -srec\t\t\tSpecifies output format as S-Record format.\n");
+	printf("  -h\t\t\tShows this help message.\n");
 }

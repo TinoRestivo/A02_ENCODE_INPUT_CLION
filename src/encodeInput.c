@@ -1,12 +1,12 @@
 /*
-* FILE:			encodeInput.c
-* PROJECT:		SENG2030 - encodeInput Assignment #2
+* FILE:				encodeInput.c
+* PROJECT:			SENG2030 - encodeInput Assignment #2
 * PROGRAMMER:		Tino Restivo, Olha Mezin
-* FIRST VERSION:	Jan 23, 2025
+* FIRST VERSION:	Jan 25, 2025
 * DESCRIPTION:
 *
 * This file includes the main function.
-* This program generates a S19 file
+* This program generates a assembly file or S19 file from user input or stdin
 */
 
 #include <stdio.h>
@@ -20,7 +20,7 @@
 #include "../inc/parseCommandLine.h"
 #include "../inc/srec.h"
 
-int main(int argc, char* argv[])			// quick and dirty program
+int main(int argc, char* argv[])
 {
 	// Initializing input file name
 	char inputFileName[FILE_NAME] = { 0 };
