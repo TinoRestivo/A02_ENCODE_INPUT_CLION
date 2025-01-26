@@ -8,10 +8,6 @@
 * This file includes logic for parsing the command line
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "../inc/parseCommandLine.h"
 /*
 	Function: int parseSwitches(int argc, char* argv[], char* inputFileName, char* outputFileName, int* outputFormat)
@@ -108,8 +104,8 @@ int parseSwitches(int argc, char* argv[], char* inputFileName, char* outputFileN
 */
 void printHelp(void)
 {
-	printf("Usage: my_program [options]\n");
-	printf("Options:\n");
+	printf("USAGE: encodeInput [options]\n");
+	printf("[OPTIONS]:\n");
 	printf("  -i<INPUTFILENAME>\tSpecifies input file.\n");
 	printf("  -o<OUTPUTFILENAME>\tSpecifies output file.\n");
 	printf("  -srec\t\t\tSpecifies output format as S-Record format.\n");

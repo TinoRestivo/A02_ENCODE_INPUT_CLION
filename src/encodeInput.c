@@ -58,8 +58,8 @@ int main(int argc, char* argv[])
 
 	if (outputFormat != S_RECORD)
 	{
-		int success = asmFile(inputFile, outputFile);
-		if (success == ERROR)
+		int status = asmFile(inputFile, outputFile);
+		if (status  == ERROR)
 		{
 			//Closing the files in case of failed read/write tasks.
 			if (inputFile != stdin)
@@ -83,8 +83,8 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
-		int success = srecFile(inputFile, outputFile);
-		if (success == ERROR)
+		int status  = srecFile(inputFile, outputFile);
+		if (status  == ERROR)
 		{
 			//Closing the files in case of failed read/write tasks.
 			if (inputFile != stdin)

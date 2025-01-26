@@ -10,7 +10,10 @@
 
 #ifndef INPUTFILE_H
 #define INPUTFILE_H
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #pragma warning(disable: 4996) // required by Visual Studio for fopen().
 
 // Constants

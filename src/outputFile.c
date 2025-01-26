@@ -9,10 +9,6 @@
 * specified in command line.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "../inc/outputFile.h"
 
 /*
@@ -29,14 +25,22 @@
 */
 int outputFileRead(char* inputFileName, char* outputFileName, FILE** outputFile, int format)
 {
+	// Initiating output file location
+	char outputFileLocation[LOCATION] = "";
+	strcpy(outputFileLocation, "./");
+
 	if (strcmp(inputFileName, "") == 0 && strcmp(outputFileName, "") == 0)
 	{
 		*outputFile = stdout;
 	}
 	else
 	{
-		// If input file name is present
-		if (strcmp(inputFileName, "\0") != 0)
+		// If output file name is present
+		if (strcmp(outputFileName,"\0")!=0)
+		{
+			strcat(outputFileLocation, outputFileName);
+		}
+		else if (strcmp(inputFileName, "\0") != 0  && strcmp(outputFileName,"\0")==0)
 		{
 			if (format == S_RECORD)
 			{
@@ -48,14 +52,11 @@ int outputFileRead(char* inputFileName, char* outputFileName, FILE** outputFile,
 				strcpy(outputFileName, inputFileName);
 				strcat(outputFileName, ".asm");
 			}
+			strcat(outputFileLocation, outputFileName);
 		}
 
-		char outputFileLocation[LOCATION] = "";
-		strcpy(outputFileLocation, ".\\");
-		strcat(outputFileLocation, outputFileName);
-
 		//Open output file
-		*outputFile = fopen(outputFileLocation, "w+");
+		*outputFile = fopen(outputFileLocation, "w");
 		if (*outputFile == NULL)
 		{
 			printf("ERROR: Can't open '%s' file\n", outputFileName);

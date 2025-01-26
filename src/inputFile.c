@@ -9,10 +9,6 @@
 * specified in command line.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #include "../inc/inputFile.h"
 
 /*
@@ -35,7 +31,7 @@ int inputFileRead(char* fileName, FILE** inputFile)
 	else
 	{
 		char inputFileLocation[LOCATION] = "";
-		strcpy(inputFileLocation, ".\\");
+		strcpy(inputFileLocation, "./");
 		strcat(inputFileLocation, fileName);
 
 		*inputFile = fopen(inputFileLocation, "rb");

@@ -9,7 +9,10 @@
 */
 #ifndef OUTPUTFILE_H
 #define OUTPUTFILE_H
+
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #pragma warning(disable: 4996) // required by Visual Studio for fopen().
 
 // Constants

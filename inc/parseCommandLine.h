@@ -9,7 +9,11 @@
 */
 #ifndef PARSECOMMANDLINE_H
 #define PARSECOMMANDLINE_H
-#pragma warning(disable: 4996) // required by Visual Studio for fopen().
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 // Constants
 #define ARGS_COUNT 5
 #define FILE_NAME 50
