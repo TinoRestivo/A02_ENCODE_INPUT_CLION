@@ -24,7 +24,7 @@
 
 int asmFile(FILE* inputFile, FILE* outputFile)
 {
-	char readLine[LINE_LENGTH];
+	char readLine[LINE_LENGTH+1];
 	unsigned char outChar;
 
 	while (fgets(readLine, sizeof(readLine), inputFile) != NULL)
@@ -38,11 +38,13 @@ int asmFile(FILE* inputFile, FILE* outputFile)
 			for (int j = i; j < i + MAX_BYTES_PER_LINE && j < lineLength; j++)
 			{
 				outChar = (unsigned char)readLine[j];
-
-				// Skipping non-printable characters (like EOF marker or control characters)
-				if (outChar < SPACE || outChar == DEL)
+				if (inputFile==stdin)
 				{
-					continue;
+					// Skipping non-printable characters (like EOF marker or control characters)
+					if (outChar < SPACE || outChar == DEL)
+					{
+						continue;
+					}
 				}
 				if (numOfCharWritten == 0)
 				{

@@ -36,6 +36,14 @@ int srecFile(FILE* inputFile, FILE* outputFile)
 	value = fgetc(inputFile);
 	while (value != EOF)
 	{
+		if (inputFile==stdin)
+		{
+			// Skipping non-printable characters (like EOF marker or control characters)
+			if (value < SPACE || value == DEL)
+			{
+				continue;
+			}
+		}
 		sData[dataCountCurrentSRecord] = (unsigned char)value;
 		dataCountCurrentSRecord++;
 		if (dataCountCurrentSRecord >= MAX_BYTES_PER_LINE)
